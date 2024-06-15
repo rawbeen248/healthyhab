@@ -2,7 +2,7 @@ import React from 'react';
 import './Lifestyle.css';
 import userProfile from '../data/users.json';
 import assessment from '../data/assessment.json';
-import { FaAppleAlt, FaDumbbell, FaBed, FaSmoking, FaHeartbeat, FaBrain, FaTint, FaRunning, FaClock } from 'react-icons/fa';
+import { FaAppleAlt, FaDumbbell, FaBed, FaSmoking, FaHeartbeat, FaBrain, FaTint, FaRunning, FaClock, FaChartLine } from 'react-icons/fa';
 
 const Lifestyle = () => {
   const profile = userProfile.profile_tags;
@@ -12,10 +12,20 @@ const Lifestyle = () => {
     return status === 'Good' ? 'status-good' : 'status-bad';
   };
 
-  const renderProgressBar = (value) => {
+  const renderProgressBar = (value, labels = ['Low', 'Medium', 'High']) => {
+    const progressBarColor = value > 50 ? 'progress-green' : 'progress-red';
     return (
-      <div className="progress-bar">
-        <div className="progress" style={{ width: `${value}%` }}></div>
+      <div className="progress-bar-container">
+        <div className="progress-bar">
+          <div className={`progress ${progressBarColor}`} style={{ width: `${value}%` }}></div>
+        </div>
+        <div className="progress-labels">
+          {labels.map((label, index) => (
+            <span key={index} className={`progress-label ${index === 2 ? 'right-label' : ''}`}>
+              {label}
+            </span>
+          ))}
+        </div>
       </div>
     );
   };
@@ -26,72 +36,60 @@ const Lifestyle = () => {
 
   return (
     <div className="lifestyle-data">
-      <div className="section">
-        <div className={`lifestyle-card ${getStatusClass(profile['lifestyle.diet.preferences'])}`}>
-          <h3><FaAppleAlt /> Diet</h3>
-          <p><span>Preferences:</span> {profile['lifestyle.diet.preferences']}</p>
-          <p><span>Restrictions:</span> {profile['lifestyle.diet.restrictions']}</p>
-        </div>
-        <div className={`lifestyle-card ${getStatusClass(profile['lifestyle.exercise.frequency'])}`}>
-          <h3><FaDumbbell /> Exercise</h3>
-          <p><span>Frequency:</span> {profile['lifestyle.exercise.frequency']}</p>
-          <p><span>Activities:</span> {profile['lifestyle.exercise.activities']}</p>
-        </div>
-        <div className={`lifestyle-card ${getStatusClass(profile['lifestyle.sleep.sleep_quality'])}`}>
-          <h3><FaBed /> Sleep</h3>
-          <p><span>Average Sleep Hours:</span> {profile['lifestyle.sleep.average_sleep_hours']}</p>
-          <p><span>Sleep Quality:</span> {profile['lifestyle.sleep.sleep_quality']}</p>
-        </div>
-        <div className={`lifestyle-card ${getStatusClass(profile['lifestyle.habits.smoking'])}`}>
-          <h3><FaSmoking /> Habits</h3>
-          <p><span>Smoking:</span> {profile['lifestyle.habits.smoking']}</p>
-          <p><span>Alcohol:</span> {profile['lifestyle.habits.alcohol']}</p>
-          <p><span>Caffeine:</span> {profile['lifestyle.habits.caffeine']}</p>
-        </div>
-      </div>
-
-      <div className="section">
-        <h2>Data Analytics</h2>
+      <div className="section data-analytics">
+        <FaChartLine className="data-analytics-icon" />
         <div className={`data-analytics-card ${getStatusClass(data.physical_health_life_style.diet.nutrition_balance)}`}>
           <h3><FaHeartbeat /> Physical Health</h3>
           <div className="data-item">
-            <FaAppleAlt /> <span>Diet:</span> {renderRating(data.physical_health_life_style.diet.nutrition_balance)}
+            <span><FaAppleAlt /> Diet</span>
+            {renderProgressBar(data.physical_health_life_style.diet.nutrition_balance === 'Balanced' ? 60 : 40, ['Unbalanced', 'Balanced', 'Optimal'])}
           </div>
           <div className="data-item">
-            <FaClock /> <span>Meal Frequency:</span> <div className="progress-container">{renderProgressBar(data.physical_health_life_style.diet.meal_frequency)}</div>
+            <span><FaClock /> Meal Frequency</span>
+            {renderProgressBar(data.physical_health_life_style.diet.meal_frequency * 20)}
           </div>
           <div className="data-item">
-            <FaTint /> <span>Hydration:</span> <div className="progress-container">{renderProgressBar(data.physical_health_life_style.diet.hydration)}</div>
+            <span><FaTint /> Hydration</span>
+            {renderProgressBar(data.physical_health_life_style.diet.hydration === 'Adequate' ? 60 : 40)}
           </div>
           <div className="data-item">
-            <FaRunning /> <span>Exercise Frequency:</span> <div className="progress-container">{renderProgressBar(data.physical_health_life_style.exercise.frequency)}</div>
+            <span><FaRunning /> Exercise Frequency</span>
+            {renderProgressBar(data.physical_health_life_style.exercise.frequency === '3 times a week' ? 60 : 40)}
           </div>
           <div className="data-item">
-            <FaHeartbeat /> <span>Exercise Intensity:</span> <div className="progress-container">{renderProgressBar(data.physical_health_life_style.exercise.intensity)}</div>
+            <span><FaHeartbeat /> Exercise Intensity</span>
+            {renderProgressBar(data.physical_health_life_style.exercise.intensity === 'Moderate' ? 60 : 40)}
           </div>
           <div className="data-item">
-            <FaBed /> <span>Sleep Quality:</span> {renderRating(data.physical_health_life_style.sleep.sleep_quality)}
+            <span><FaBed /> Sleep Quality</span>
+            {renderProgressBar(data.physical_health_life_style.sleep.sleep_quality, ['Poor', 'Average', 'Good'])}
           </div>
           <div className="data-item">
-            <FaClock /> <span>Sleep Duration:</span> <div className="progress-container">{renderProgressBar(data.physical_health_life_style.sleep.sleep_duration)}</div>
+            <span><FaClock /> Sleep Duration</span>
+            {renderProgressBar(data.physical_health_life_style.sleep.sleep_duration === '7-8 hours' ? 60 : 40)}
           </div>
         </div>
         <div className={`data-analytics-card ${getStatusClass(data.mental_health_life_style.emotional_wellbeing.mood_stability)}`}>
           <h3><FaBrain /> Mental Health</h3>
           <div className="data-item">
-            <FaBrain /> <span>Stress Management:</span> {renderRating(data.mental_health_life_style.stress_management.coping_mechanisms.length)}
+            <span>Stress Management</span>
+            {renderProgressBar(data.mental_health_life_style.stress_management.coping_mechanisms.length * 20)}
           </div>
           <div className="data-item">
-            <FaBrain /> <span>Relaxation Techniques:</span> {renderRating(data.mental_health_life_style.stress_management.relaxation_techniques.length)}
+            <span>Relaxation Techniques</span>
+            {renderProgressBar(data.mental_health_life_style.stress_management.relaxation_techniques.length * 20)}
           </div>
           <div className="data-item">
-            <FaBrain /> <span>Mood Stability:</span> {renderRating(data.mental_health_life_style.emotional_wellbeing.mood_stability)}
+            <span>Mood Stability</span>
+            {renderProgressBar(data.mental_health_life_style.emotional_wellbeing.mood_stability === 'Stable' ? 60 : 40)}
           </div>
           <div className="data-item">
-            <FaBrain /> <span>Anxiety Levels:</span> {renderRating(data.mental_health_life_style.emotional_wellbeing.anxiety_levels)}
+            <span>Anxiety Levels</span>
+            {renderProgressBar(data.mental_health_life_style.emotional_wellbeing.anxiety_levels === 'Low' ? 60 : 40)}
           </div>
           <div className="data-item">
-            <FaBrain /> <span>Depression Symptoms:</span> {renderRating(data.mental_health_life_style.emotional_wellbeing.depression_symptoms)}
+            <span>Depression Symptoms</span>
+            {renderProgressBar(data.mental_health_life_style.emotional_wellbeing.depression_symptoms === 'None' ? 60 : 40)}
           </div>
         </div>
       </div>

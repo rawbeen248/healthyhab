@@ -28,6 +28,37 @@ const Reminders = () => {
     setReminders(reminders.filter((_, i) => i !== index));
   };
 
+  const tileContent = ({ date, view }) => {
+    if (view === 'month') {
+      const dateString = date.toISOString().split('T')[0];
+      const reminderCategories = reminders
+        .filter(reminder => new Date(reminder.date).toISOString().split('T')[0] === dateString)
+        .map(reminder => reminder.category.toLowerCase());
+      
+      if (reminderCategories.length === 0) return null;
+
+      const uniqueCategories = [...new Set(reminderCategories)];
+      const colorMap = {
+        health: 'green',
+        work: 'blue',
+        personal: 'purple',
+      };
+
+      return (
+        <div className="tile-content">
+          {uniqueCategories.map((category, index) => (
+            <div 
+              key={index} 
+              className="tile-marker" 
+              style={{ backgroundColor: colorMap[category] }}
+            />
+          ))}
+        </div>
+      );
+    }
+    return null;
+  };
+
   return (
     <div className="reminders">
       <div className="reminder-form">
@@ -61,7 +92,11 @@ const Reminders = () => {
       </div>
 
       <div className="reminder-calendar">
-        <Calendar value={date} onChange={setDate} />
+        <Calendar 
+          value={date} 
+          onChange={setDate} 
+          tileContent={tileContent} 
+        />
       </div>
 
       <div className="reminder-notifications">

@@ -59,16 +59,16 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: #007bff;
+    color: #8f60e2;
     text-decoration: none;
 }
 
 .bottom-nav a.active {
-    color: #0056b3; /* Highlight color for active link */
+    color: #641de0; /* Highlight color for active link */
 }
 
 .bottom-nav a:hover {
-    color: #0056b3;
+    color: #6e2dde;
 }
 
 .bottom-nav svg {

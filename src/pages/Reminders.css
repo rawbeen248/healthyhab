@@ -38,7 +38,7 @@
     font-size: 0.6em; /* Smaller font size */
     border: none;
     border-radius: 5px;
-    background-color: #007bff;
+    background-color: #8f60e2;
     color: white;
     cursor: pointer;
   }
@@ -49,7 +49,7 @@
   
   .upcoming-reminders h2 {
     font-size: 0.9em; /* Smaller font size */
-    color: #007bff;
+    color: #8f60e2;
     display: flex;
     align-items: center;
   }
@@ -131,6 +131,7 @@
   
   .notifications-placeholder p, .history-placeholder p {
     font-size: 0.8em; /* Make text a bit larger */
+    text-align: center; /* Center align text */
   }
   
   .notifications-placeholder button, .history-placeholder button {
@@ -138,14 +139,14 @@
     font-size: 0.7em; /* Smaller font size */
     border: none;
     border-radius: 5px;
-    background-color: #007bff;
+    background-color: #8f60e2;
     color: white;
     cursor: pointer;
     margin-top: 5px;
   }
   
   .notifications-placeholder p:first-child, .history-placeholder p:first-child {
-    font-size: 2em; /* Larger icon size */
+    font-size: 1.5em; /* Slightly larger icon size */
   }
   
   .react-calendar {
@@ -156,7 +157,42 @@
     border-radius: 10px;
   }
   
+  .react-calendar__navigation {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.7em; /* Smaller font size for navigation */
+  }
+  
+  .react-calendar__navigation button {
+    min-width: 30px; /* Smaller width */
+    background: none;
+    border: none;
+    font-size: 1.2em; /* Smaller font size for navigation buttons */
+    padding: 5px; /* Ensure padding is not too large */
+    margin: 0; /* Ensure no extra margin */
+  }
+  
   .react-calendar__tile {
-    padding: 10px;
+    padding: 6px;
+  }
+  
+  .react-calendar__month-view__days__day--neighboringMonth {
+    color: #ccc;
+  }
+  
+  .react-calendar__month-view__days__day--weekend {
+    color: #f00;
+  }
+  
+  .tile-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  
+  .tile-marker {
+    width: 50%;
+    height: 5px;
   }
   
