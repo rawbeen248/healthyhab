@@ -54,6 +54,11 @@
     align-items: center;
   }
   
+  .header-icon {
+    margin-right: 5px;
+    font-size: 1.2em; /* Adjust icon size */
+  }
+  
   .upcoming-reminders ul {
     list-style: none;
     padding: 0;
@@ -120,18 +125,38 @@
   }
   
   .calendar-placeholder p, .notifications-placeholder p, .history-placeholder p {
-    margin: 10px 0;
-    font-size: 0.9em; /* Smaller font size */
+    margin: 2px 0;
+    font-size: 0.6em; /* Smaller font size */
+  }
+  
+  .notifications-placeholder p, .history-placeholder p {
+    font-size: 0.8em; /* Make text a bit larger */
   }
   
   .notifications-placeholder button, .history-placeholder button {
-    padding: 10px 20px;
-    font-size: 0.8em; /* Smaller font size */
+    padding: 5px 10px; /* Smaller button size */
+    font-size: 0.7em; /* Smaller font size */
     border: none;
     border-radius: 5px;
     background-color: #007bff;
     color: white;
     cursor: pointer;
-    margin-top: 10px;
+    margin-top: 5px;
+  }
+  
+  .notifications-placeholder p:first-child, .history-placeholder p:first-child {
+    font-size: 2em; /* Larger icon size */
+  }
+  
+  .react-calendar {
+    width: 100%;
+    border: none;
+    font-size: 0.6em; /* Smaller font size */
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+  }
+  
+  .react-calendar__tile {
+    padding: 10px;
   }
   

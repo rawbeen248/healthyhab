@@ -1,12 +1,15 @@
 import React, { useState, useEffect } from 'react';
+import Calendar from 'react-calendar';
+import 'react-calendar/dist/Calendar.css';
 import './Reminders.css';
-import { FaPlus, FaBell, FaCalendarAlt, FaTrash } from 'react-icons/fa';
+import { FaPlus, FaBell, FaCalendarAlt, FaTrash, FaListUl } from 'react-icons/fa';
 import reminderData from '../data/reminders.json';
 
 const Reminders = () => {
   const [reminders, setReminders] = useState([]);
   const [newReminder, setNewReminder] = useState('');
   const [category, setCategory] = useState('');
+  const [date, setDate] = useState(new Date());
 
   useEffect(() => {
     setReminders(reminderData.reminders);
@@ -44,7 +47,7 @@ const Reminders = () => {
       </div>
 
       <div className="upcoming-reminders">
-        <h2>Upcoming Reminders</h2>
+        <h2><FaListUl className="header-icon" /> Upcoming Reminders</h2>
         <ul>
           {reminders.map((reminder, index) => (
             <li key={index} className={`reminder-item ${reminder.category.toLowerCase()}`}>
@@ -58,10 +61,7 @@ const Reminders = () => {
       </div>
 
       <div className="reminder-calendar">
-        <div className="calendar-placeholder">
-          <p>📅</p>
-          <p>Calendar component coming soon...</p>
-        </div>
+        <Calendar value={date} onChange={setDate} />
       </div>
 
       <div className="reminder-notifications">
