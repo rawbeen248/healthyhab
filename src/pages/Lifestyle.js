@@ -36,8 +36,6 @@ const Lifestyle = () => {
 
   return (
     <div className="lifestyle-data">
-      <div className="section data-analytics">
-        <FaChartLine className="data-analytics-icon" />
         <div className={`data-analytics-card ${getStatusClass(data.physical_health_life_style.diet.nutrition_balance)}`}>
           <h3><FaHeartbeat /> Physical Health</h3>
           <div className="data-item">
@@ -92,7 +90,6 @@ const Lifestyle = () => {
             {renderProgressBar(data.mental_health_life_style.emotional_wellbeing.depression_symptoms === 'None' ? 60 : 40)}
           </div>
         </div>
-      </div>
     </div>
   );
 };
