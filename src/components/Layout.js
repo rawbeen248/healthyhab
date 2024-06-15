@@ -1,6 +1,6 @@
 import React from 'react';
-import { Link, Outlet } from 'react-router-dom';
-import { FaComments, FaUser, FaHeart, FaBell } from 'react-icons/fa'; // Updated icon for Reminders
+import { NavLink, Outlet } from 'react-router-dom';
+import { FaComments, FaUser, FaHeart, FaBell } from 'react-icons/fa';
 import './Layout.css';
 
 const Layout = () => {
@@ -11,10 +11,10 @@ const Layout = () => {
           <Outlet />
         </div>
         <nav className="bottom-nav">
-          <Link to="/"><FaComments /></Link>
-          <Link to="/profile"><FaUser /></Link>
-          <Link to="/lifestyle"><FaHeart /></Link>
-          <Link to="/reminders"><FaBell /></Link> {/* Updated link */}
+          <NavLink to="/" className={({ isActive }) => (isActive ? 'active' : '')}><FaComments /></NavLink>
+          <NavLink to="/profile" className={({ isActive }) => (isActive ? 'active' : '')}><FaUser /></NavLink>
+          <NavLink to="/lifestyle" className={({ isActive }) => (isActive ? 'active' : '')}><FaHeart /></NavLink>
+          <NavLink to="/reminders" className={({ isActive }) => (isActive ? 'active' : '')}><FaBell /></NavLink>
         </nav>
       </div>
     </div>

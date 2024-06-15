@@ -1,0 +1,137 @@
+.reminders {
+    padding: 20px;
+    background-color: #f9f9f9;
+    height: 100vh;
+    box-sizing: border-box;
+    overflow-y: auto;
+    overflow-x: hidden;
+    max-width: 100%;
+    scrollbar-width: thin; /* For Firefox */
+  }
+  
+  .reminders::-webkit-scrollbar {
+    width: 8px; /* Make the scrollbar thinner */
+  }
+  
+  .reminders::-webkit-scrollbar-thumb {
+    background: #888; /* Scrollbar thumb color */
+    border-radius: 10px; /* Scrollbar thumb rounded edges */
+  }
+  
+  .reminder-form {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 20px 0;
+  }
+  
+  .reminder-form input, .reminder-form select {
+    padding: 5px;
+    font-size: 0.8em; /* Smaller font size */
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  .reminder-form button {
+    padding: 5px;
+    font-size: 0.6em; /* Smaller font size */
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .upcoming-reminders, .reminder-calendar, .reminder-notifications, .reminder-history {
+    margin: 20px 0;
+  }
+  
+  .upcoming-reminders h2 {
+    font-size: 0.9em; /* Smaller font size */
+    color: #007bff;
+    display: flex;
+    align-items: center;
+  }
+  
+  .upcoming-reminders ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .reminder-item {
+    display: flex;
+    flex-direction: column; /* Arrange items vertically */
+    align-items: flex-start;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+  }
+  
+  .reminder-item button {
+    position: absolute;
+    top: 10px;
+    right: 2px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    color: red;
+    font-size: 1em; /* Smaller font size */
+  }
+  
+  .reminder-text {
+    font-size: 0.9em; /* Smaller font size */
+  }
+  
+  .reminder-category {
+    font-size: 0.8em; /* Smaller font size */
+    color: #555;
+  }
+  
+  .reminder-date {
+    font-size: 0.8em; /* Smaller font size */
+    color: #777;
+  }
+  
+  .reminder-item.health {
+    border-left: 5px solid green;
+  }
+  
+  .reminder-item.work {
+    border-left: 5px solid blue;
+  }
+  
+  .reminder-item.personal {
+    border-left: 5px solid purple;
+  }
+  
+  .calendar-placeholder, .notifications-placeholder, .history-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .calendar-placeholder p, .notifications-placeholder p, .history-placeholder p {
+    margin: 10px 0;
+    font-size: 0.9em; /* Smaller font size */
+  }
+  
+  .notifications-placeholder button, .history-placeholder button {
+    padding: 10px 20px;
+    font-size: 0.8em; /* Smaller font size */
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  

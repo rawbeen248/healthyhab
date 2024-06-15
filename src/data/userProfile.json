@@ -1,0 +1,15 @@
+{
+    "name": "John Doe",
+    "age": 30,
+    "gender": "Male",
+    "email": "john.doe@example.com",
+    "height": "180 cm",
+    "weight": "75 kg",
+    "bmi": "23.1",
+    "activityLevel": "Active",
+    "blood_type": "B+",
+    "marital_status": "Single",
+    "goal": "Maintain a healthy lifestyle"
+
+  }
+  

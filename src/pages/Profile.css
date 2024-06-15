@@ -1,0 +1,91 @@
+.profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 !important; /* Force remove any padding */
+    background: #f9f9f9;
+    height: 100%;
+    width: 100%; /* Ensure it takes full width of the phone screen */
+    box-sizing: border-box;
+    overflow-y: auto; /* Enable vertical scrolling */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    margin: 0 !important; /* Remove margin */
+    scrollbar-width: thin; /* For Firefox */
+    justify-content: flex-start; /* Align content at the start */
+}
+
+.profile::-webkit-scrollbar {
+    width: 8px; /* Slim scrollbar width */
+}
+
+.profile::-webkit-scrollbar-thumb {
+    background: #888; /* Scrollbar color */
+    border-radius: 10px; /* Scrollbar rounded edges */
+}
+
+.profile-card {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Ensure it fits within the phone screen */
+    max-width: 100%; /* Ensure it fits within the phone screen */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    margin: 0; /* Remove margin to fit within the frame */
+    flex: 1; /* Make it grow to fill the available space */
+    justify-content: center; /* Center the content vertically */
+}
+
+.profile-picture img {
+    border-radius: 50%;
+    width: 80px; /* Reduced size */
+    height: 80px; /* Reduced size */
+}
+
+.profile-details {
+    margin-top: 15px;
+    text-align: left;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.profile-details h2 {
+    margin: 0;
+    padding: 0;
+    font-size: 1em; /* Smaller font size */
+    color: #007bff; /* Custom color for name */
+    text-align: center; /* Center align the name */
+}
+
+.profile-info {
+    display: flex;
+    flex-direction: column; /* Stack info cards vertically */
+    gap: 10px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.info-card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Take up full width of the container */
+    text-align: left; /* Align text to the left */
+    box-sizing: border-box;
+}
+
+.info-card p {
+    margin: 5px 0;
+    font-size: 0.8em; /* Smaller font size */
+    color: #333; /* Custom color for details */
+    word-wrap: break-word; /* Ensure long words break to fit */
+}
+
+.info-card p strong {
+    color: #555; /* Different color for labels */
+}

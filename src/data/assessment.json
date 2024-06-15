@@ -1,0 +1,155 @@
+{
+    "general_assessment": {
+      "physical_health_life_style": {
+        "diet": {
+          "nutrition_balance": "Balanced",
+          "meal_frequency": 3,
+          "hydration": "Adequate"
+        },
+        "exercise": {
+          "frequency": "3 times a week",
+          "intensity": "Moderate",
+          "types_of_exercise": [
+            "Jogging",
+            "Weightlifting"
+          ]
+        },
+        "sleep": {
+          "sleep_quality": 8,
+          "sleep_duration": "7-8 hours",
+          "sleep_consistency": "Consistent"
+        },
+        "substance_use": {
+          "smoking": "None",
+          "alcohol": "Occasional",
+          "drug_use": "None"
+        }
+      },
+      "mental_health_life_style": {
+        "stress_management": {
+          "coping_mechanisms": [
+            "Meditation",
+            "Exercise"
+          ],
+          "stress_triggers": [
+            "Work pressure",
+            "Family issues"
+          ],
+          "relaxation_techniques": [
+            "Breathing exercises",
+            "Mindfulness"
+          ]
+        },
+        "emotional_wellbeing": {
+          "mood_stability": "Variable",
+          "anxiety_levels": "High",
+          "depression_symptoms": "Moderate"
+        },
+        "social_connections": {
+          "support_network": [
+            "Wife",
+            "Friends"
+          ],
+          "relationship_quality": "Strong",
+          "social_activity": [
+            "Family gatherings",
+            "Community events"
+          ]
+        },
+        "self_care": {
+          "hobbies": [
+            "Reading",
+            "Hiking"
+          ],
+          "personal_time": [
+            "Evening relaxation",
+            "Weekend leisure"
+          ],
+          "mindfulness_practices": [
+            "Meditation",
+            "Journaling"
+          ]
+        }
+      },
+      "work_life_style": {
+        "work_life_balance": {
+          "working_hours": "40 hours/week",
+          "personal_time_allocation": [
+            "Evenings",
+            "Weekends"
+          ],
+          "work_stress": 6
+        },
+        "career_satisfaction": {
+          "job_satisfaction": "High",
+          "career_goals": [
+            "Advance to senior management",
+            "Lead major projects"
+          ],
+          "professional_growth": "Ongoing"
+        },
+        "productivity": {
+          "focus_levels": "High",
+          "time_management": [
+            "Prioritized tasks",
+            "Effective scheduling"
+          ],
+          "work_environment": "Supportive"
+        },
+        "work_relationships": {
+          "colleague_interactions": [
+            "Collaborative",
+            "Friendly"
+          ],
+          "manager_relations": "Positive",
+          "team_dynamics": "Cooperative"
+        }
+      },
+      "general_life_style": {
+        "daily_routine": {
+          "morning_routine": [
+            "Jogging",
+            "Healthy breakfast"
+          ],
+          "evening_routine": [
+            "Family time",
+            "Reading"
+          ],
+          "weekend_activities": [
+            "Outdoor activities",
+            "Relaxation"
+          ]
+        },
+        "financial_health": {
+          "income_management": "Good",
+          "spending_habits": [
+            "Controlled",
+            "Budgeted"
+          ],
+          "savings_plans": "Regular contributions"
+        },
+        "environmental_factors": {
+          "living_conditions": "Comfortable",
+          "community_involvement": [
+            "Volunteering",
+            "Local events"
+          ],
+          "recreational_activities": [
+            "Hiking",
+            "Travel"
+          ]
+        },
+        "personal_growth": {
+          "learning_new_skills": [
+            "Programming",
+            "Project management"
+          ],
+          "goal_setting": [
+            "Monthly reviews",
+            "Annual planning"
+          ],
+          "achievement_tracking": "Documented"
+        }
+      }
+    }
+  }
