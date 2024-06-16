@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './Profile.css';
 import userProfile from '../data/userProfile.json';
 import persona from '../data/persona.png';
+import { FaBirthdayCake, FaVenusMars, FaEnvelope, FaRulerVertical, FaWeight, FaCalculator, FaTint, FaHeart, FaRunning, FaBullseye } from 'react-icons/fa';
 
 const Profile = () => {
   const [profile, setProfile] = useState(null);
@@ -18,41 +19,44 @@ const Profile = () => {
   return (
     <div className="profile">
       <div className="profile-card">
-        <div className="profile-picture">
-          <img src={persona} alt="Profile" />
+        <div className="profile-picture-wrapper">
+          <div className="semi-circle"></div>
+          <div className="profile-picture">
+            <img src={persona} alt="Profile" />
+          </div>
         </div>
         <div className="profile-details">
           <h2>{profile.name}</h2>
           <div className="profile-info">
             <div className="info-card">
-              <p><strong>Age:</strong> {profile.age}</p>
+              <p><FaBirthdayCake /> {profile.age}</p>
             </div>
             <div className="info-card">
-              <p><strong>Gender:</strong> {profile.gender}</p>
+              <p><FaVenusMars /> {profile.gender}</p>
             </div>
             <div className="info-card">
-              <p><strong>Email:</strong> {profile.email}</p>
+              <p><FaEnvelope /> {profile.email}</p>
             </div>
             <div className="info-card">
-              <p><strong>Height:</strong> {profile.height}</p>
+              <p><FaRulerVertical /> {profile.height}</p>
             </div>
             <div className="info-card">
-              <p><strong>Weight:</strong> {profile.weight}</p>
+              <p><FaWeight /> {profile.weight}</p>
             </div>
             <div className="info-card">
-              <p><strong>BMI:</strong> {profile.bmi}</p>
+              <p><FaCalculator /> {profile.bmi}</p>
             </div>
             <div className="info-card">
-              <p><strong>Blood Type:</strong> {profile.blood_type}</p>
+              <p><FaTint /> {profile.blood_type}</p>
             </div>
             <div className="info-card">
-              <p><strong>Marital Status:</strong> {profile.marital_status}</p>
+              <p><FaHeart /> {profile.marital_status}</p>
             </div>
             <div className="info-card">
-              <p><strong>Activity Level:</strong> {profile.activityLevel}</p>
+              <p><FaRunning /> {profile.activityLevel}</p>
             </div>
             <div className="info-card">
-              <p><strong>Goal:</strong> {profile.goal}</p>
+              <p><FaBullseye /> {profile.goal}</p>
             </div>
           </div>
         </div>

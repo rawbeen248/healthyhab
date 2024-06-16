@@ -39,10 +39,40 @@
     justify-content: center; /* Center the content vertically */
 }
 
+.profile-picture-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.semi-circle {
+    position: absolute;
+    top: -30px; /* Adjust as needed */
+    width: 210px; /* Adjust as needed */
+    height: 105px; /* Adjust as needed */
+    background: #8f60e2;
+    border-bottom-left-radius: 105px; /* Adjust as needed */
+    border-bottom-right-radius: 105px; /* Adjust as needed */
+    z-index: 0;
+}
+
+.profile-picture {
+    position: relative;
+    z-index: 1;
+    border-radius: 50%;
+    width: 70px; /* Reduced size */
+    height: 70px; /* Reduced size */
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .profile-picture img {
     border-radius: 50%;
-    width: 80px; /* Reduced size */
-    height: 80px; /* Reduced size */
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
 }
 
 .profile-details {
@@ -55,6 +85,7 @@
 .profile-details h2 {
     margin: 0;
     padding: 0;
+    padding-bottom:10px;
     font-size: 1em; /* Smaller font size */
     color: #8f60e2; /* Custom color for name */
     text-align: center; /* Center align the name */
@@ -73,6 +104,8 @@
     border: 1px solid #ddd;
     border-radius: 5px;
     padding: 10px;
+    margin-top:-1px;
+    margin-bottom:-1px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
     width: 100%; /* Take up full width of the container */
     text-align: left; /* Align text to the left */
@@ -81,9 +114,13 @@
 
 .info-card p {
     margin: 5px 0;
-    font-size: 0.8em; /* Smaller font size */
-    color: #333; /* Custom color for details */
+    font-size: 0.75em; /* Smaller font size */
+    color: #8f60e2; /* Custom color for details */
     word-wrap: break-word; /* Ensure long words break to fit */
+}
+
+.info-card p i {
+    margin-right: 5px; /* Space between icon and text */
 }
 
 .info-card p strong {
